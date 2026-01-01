@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wedding Control Panel</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f5f5f5;
+      }
+
+      .tabs {
+        display: flex;
+        background: #222;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .tabs::-webkit-scrollbar {
+        display: none; /* hide scrollbar on mobile */
+      }
+
+      .tab {
+        flex: 0 0 auto;
+        padding: 12px 20px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .tab.active {
+        background: #ff9800;
+      }
+
+      .content {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .frame-wrapper {
+        width: 100%;
+        max-width: 1000px;
+        height: calc(100vh - 88px);
+        background: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <div class="tab active" onclick="openTab(0)">Work Tracker</div>
+      <div class="tab" onclick="openTab(1)">Motihari Guests</div>
+      <div class="tab" onclick="openTab(2)">Corbett Guests</div>
+    </div>
+
+    <div class="content">
+      <div class="frame-wrapper">
+        <iframe id="frame"></iframe>
+      </div>
+    </div>
+
+    <script>
+      const docs = [
+        "https://docs.google.com/document/d/e/2PACX-1vRTF15eYs_297spUJcc4MFparKX6ktsr6eiAWhnND6tzL-FSLa5TRkJJ5TmkuySipyYJTnzIqFkODTm/pub?embedded=true",
+
+        "https://docs.google.com/document/d/e/2PACX-1vQNKXoQ24fhNao3fq6oz2fQvWijw1kN-7pDAZ_MAnLIUV5YGd5xk3RVvk1ZBfEftIsdhhBdTjP43Fgq/pub?embedded=true",
+        "https://docs.google.com/document/d/e/2PACX-1vTm5oXK08lGS5CJzBchVjH03kMneTZJbzQGkr2mtVmSibrCpr4wVDxY8rmv8u53LwLCfQeB2tMs0WJj/pub?embedded=true",
+      ];
+
+      function openTab(i) {
+        document.querySelectorAll(".tab").forEach((t, idx) => {
+          t.classList.toggle("active", idx === i);
+        });
+        document.getElementById("frame").src = docs[i];
+      }
+
+      openTab(0);
+    </script>
+  </body>
+</html>
