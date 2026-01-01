@@ -53,6 +53,12 @@
         height: 100%;
         border: none;
       }
+      @media (max-width: 600px) {
+        .tab {
+          padding: 18px 0; /* more height */
+          font-size: 16px; /* bigger text */
+        }
+      }
     </style>
   </head>
   <body>
@@ -71,9 +77,9 @@
     <script>
       const docs = [
         "https://docs.google.com/document/d/e/2PACX-1vRTF15eYs_297spUJcc4MFparKX6ktsr6eiAWhnND6tzL-FSLa5TRkJJ5TmkuySipyYJTnzIqFkODTm/pub?embedded=true",
+        "https://docs.google.com/document/d/e/2PACX-1vTm5oXK08lGS5CJzBchVjH03kMneTZJbzQGkr2mtVmSibrCpr4wVDxY8rmv8u53LwLCfQeB2tMs0WJj/pub?embedded=true",
 
         "https://docs.google.com/document/d/e/2PACX-1vQNKXoQ24fhNao3fq6oz2fQvWijw1kN-7pDAZ_MAnLIUV5YGd5xk3RVvk1ZBfEftIsdhhBdTjP43Fgq/pub?embedded=true",
-        "https://docs.google.com/document/d/e/2PACX-1vTm5oXK08lGS5CJzBchVjH03kMneTZJbzQGkr2mtVmSibrCpr4wVDxY8rmv8u53LwLCfQeB2tMs0WJj/pub?embedded=true",
       ];
 
       function openTab(i) {
