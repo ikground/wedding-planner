@@ -12,22 +12,20 @@
 
       .tabs {
         display: flex;
+        width: 100%;
         background: #222;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
       }
 
       .tabs::-webkit-scrollbar {
         display: none; /* hide scrollbar on mobile */
       }
-
       .tab {
-        flex: 0 0 auto;
-        padding: 12px 20px;
+        flex: 1;
+        padding: 12px 0;
         color: white;
         text-align: center;
         cursor: pointer;
+        font-size: 14px;
       }
 
       .tab.active {
